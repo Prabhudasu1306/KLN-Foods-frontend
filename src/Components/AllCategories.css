@@ -1,0 +1,82 @@
+.custom-category-list {
+    padding: 20px;
+  }
+  
+  .custom-category-list h2 {
+    margin-bottom: 20px;
+  }
+  
+  .custom-error {
+    color: red;
+    margin-bottom: 15px;
+  }
+  
+  .custom-category-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .custom-category-table th, .custom-category-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .custom-category-table th {
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  .custom-category-table td img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .custom-category-image {
+    border-radius: 8px;
+  }
+  
+  .custom-category-table button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-delete-button {
+    color: red;
+    background-color: #f8d7da;
+  }
+  
+  .custom-delete-button:hover {
+    background-color: #ffebeb;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-category-table td img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .category-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-button:hover {
+    background-color: #0056b3;
+  }
+  

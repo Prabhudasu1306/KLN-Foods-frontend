@@ -1,82 +1,71 @@
-/* General Container Style */
 .signup-container {
-  max-width: 600px; /* Set maximum width for the form */
-  margin: 50px auto; /* Center the form horizontally with margin from top */
-  padding: 20px; /* Padding around the container */
-  background-color: #f9f9f9; /* Light background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Heading */
 h5 {
-  text-align: center; /* Centered heading */
-  color: #333; /* Dark color for text */
+  text-align: center;
+  color: #333;
 }
 
-/* Form Row Style */
 .form-row {
-  display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Space between items */
-  margin-bottom: 15px; /* Margin below each row */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-/* Form Group Style */
 .form-group {
-  flex: 1; /* Each input field takes equal space */
-  margin-right: 10px; /* Margin to the right of the group */
+  flex: 1;
+  margin-right: 10px;
 }
 
-/* Remove margin from the last group in each row */
 .form-row .form-group:last-child {
-  margin-right: 0; /* No margin for the last item */
+  margin-right: 0;
 }
 
-/* Input Field Style */
 .input-field {
-  width: 100%; /* Full width of the parent */
-  padding: 12px; /* Increased padding inside the input for more height */
-  border: 1px solid #ccc; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 14px; /* Font size */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
-/* Button Group Style */
 .button-group {
-  display: flex; /* Flexbox for layout */
-  justify-content: center; /* Center buttons */
-  margin-top: 10px; /* Space above button group */
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-/* Button Style */
 button {
-  padding: 10px 12px; /* Padding inside buttons */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  margin: 0 5px; /* Margin between buttons */
+  padding: 10px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 5px;
 }
 
-/* Specific Button Colors */
 button[type="submit"] {
-  background-color: #007bff; /* Blue color for submit button */
-  color: white; /* White text */
+  background-color: #007bff;
+  color: white;
 }
 
 button[type="button"] {
-  background-color: #dc3545; /* Red color for clear button */
-  color: white; /* White text */
+  background-color: #dc3545;
+  color: white;
 }
 
-/* Error Message Style */
 .error-message {
-  color: red; /* Red color for error messages */
-  text-align: center; /* Centered error message */
+  color: red;
+  text-align: center;
 }
 
-/* Link Style */
 p {
-  text-align: center; /* Centered paragraph */
-  margin-top: 15px; /* Margin above the paragraph */
+  text-align: center;
+  margin-top: 15px;
 }

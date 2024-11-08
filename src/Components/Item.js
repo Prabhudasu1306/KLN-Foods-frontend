@@ -16,20 +16,24 @@ const Item = () => {
   });
 
   const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState([]);
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/categories/all');
-        setCategories(response.data);
+        const categoryResponse = await axios.get('http://localhost:8080/categories/all');
+        setCategories(categoryResponse.data);
+
+        const itemResponse = await axios.get('http://localhost:8080/foods/all');
+        setItems(itemResponse.data);
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error('Error fetching categories or items:', error);
       }
     };
 
-    fetchCategories();
-  }, []); // Fetch categories only once on component mount
+    fetchData();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +41,6 @@ const Item = () => {
     setFormData((prevFormData) => {
       const updatedData = { ...prevFormData, [name]: value };
 
-      // Calculate totalGST and totalPrice only if price and GST values are valid numbers
       const stateGST = parseFloat(updatedData.stateGST) || 0;
       const centralGST = parseFloat(updatedData.centralGST) || 0;
       const price = parseFloat(updatedData.price) || 0;
@@ -56,11 +59,14 @@ const Item = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const duplicateItem = items.find((item) => item.name === formData.name);
+    if (duplicateItem) {
+      setMessage('An item with this name already exists.');
+      return;
+    }
+
     try {
       const response = await axios.post('http://localhost:8080/foods/create', formData);
-
-      console.log('Response:', response.data);
-
       setMessage('Food item added successfully!');
       setFormData({
         name: '',
@@ -73,6 +79,7 @@ const Item = () => {
         imageUrl: '',
         categoryName: ''
       });
+      setItems([...items, response.data]);
     } catch (error) {
       console.error('Error adding food item:', error);
       setMessage('Failed to add food item.');

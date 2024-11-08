@@ -133,10 +133,12 @@ const Admin = () => {
       setTransactionId(transactionId); 
       setStatus(status);
 
-     
-      setPayments(prevPayments => prevPayments.map(payment =>
-        payment.transactionId === transactionId ? { ...payment, status } : payment
-      ));
+      // Update the payment status locally
+      setPayments(prevPayments => 
+        prevPayments.map(payment => 
+          payment.transactionId === transactionId ? { ...payment, status } : payment
+        )
+      );
     } catch (error) {
       console.error(error);
       alert('Error updating payment status: ' + error.message);
@@ -164,18 +166,24 @@ const Admin = () => {
                 <td>{payment.totalAmount}</td>
                 <td>{payment.status === 'Success' ? 'Paid' : payment.status === 'Failed' ? 'Not Paid' : payment.status}</td>
                 <td>
-                  <button
-                    className="admin-allow-button"
-                    onClick={() => updatePaymentStatus(payment.transactionId, 'Success')}
-                  >
-                    Allow
-                  </button>
-                  <button
-                    className="admin-decline-button"
-                    onClick={() => updatePaymentStatus(payment.transactionId, 'Failed')}
-                  >
-                    Decline
-                  </button>
+                  {payment.status === 'Success' || payment.status === 'Failed' ? (
+                    <span className="admin-done">Done</span>
+                  ) : (
+                    <>
+                      <button
+                        className="admin-allow-button"
+                        onClick={() => updatePaymentStatus(payment.transactionId, 'Success')}
+                      >
+                        Allow
+                      </button>
+                      <button
+                        className="admin-decline-button"
+                        onClick={() => updatePaymentStatus(payment.transactionId, 'Failed')}
+                      >
+                        Decline
+                      </button>
+                    </>
+                  )}
                 </td>
               </tr>
             ))

@@ -11,6 +11,21 @@
   margin-bottom: 15px;
 }
 
+.add-item-button {
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px; 
+  transition: background-color 0.3s ease;
+}
+
+.add-item-button:hover {
+  background-color: #0056b3; 
+}
+
 .custom-food-table {
   width: 100%;
   border-collapse: collapse;
@@ -49,14 +64,6 @@
   transition: background-color 0.3s ease;
 }
 
-.custom-edit-button {
-  background-color: #e6e6e6;
-}
-
-.custom-edit-button:hover {
-  background-color: #dcdcdc;
-}
-
 .custom-delete-button {
   color: red;
 }
@@ -65,71 +72,7 @@
   background-color: #ffebeb;
 }
 
-.custom-edit-form {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fafafa;
-}
-
-.custom-edit-form-grid-expanded {
-  display: grid;
-  grid-template-columns: 1fr; 
-  gap: 20px;
-}
-
-.custom-edit-form-grid-expanded label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  color: black; 
-}
-
-.custom-edit-form-grid-expanded input,
-.custom-edit-form-grid-expanded textarea {
-  padding: 15px; 
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 18px; 
-  width: 100%; 
-}
-
-.custom-save-button {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.custom-save-button:hover {
-  background-color: #218838;
-}
-
-.custom-cancel-button {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 6px 12px; 
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.custom-cancel-button:hover {
-  background-color: #c82333;
-}
-
-
 @media (max-width: 768px) {
-  .custom-edit-form-grid-expanded {
-    grid-template-columns: 1fr; 
-  }
-
   .custom-food-table td img {
     width: 80px;
     height: 80px;

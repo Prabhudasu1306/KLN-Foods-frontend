@@ -51,7 +51,7 @@ const Signup = () => {
     // }
 
     try {
-      const apiUrl = "http://localhost:8080/users/create"; // Replace with your backend API
+      const apiUrl = "http://localhost:8080/users/create"; 
       await axios.post(apiUrl, { firstName, lastName, email, password, role });
       
       handleClear();

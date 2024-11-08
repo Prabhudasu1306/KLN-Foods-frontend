@@ -20,26 +20,29 @@ const Login = ({ onLoginSuccess }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     if (!email || !password) {
       setMessage("Please enter both email and password.");
       return;
     }
-
+  
     setLoading(true);
     try {
       const response = await axios.get("http://localhost:8080/users/all");
       const users = response.data;
-
+  
       const matchedUser = users.find(
         (user) => user.email === email && user.password === password
       );
-
+  
       if (matchedUser) {
         setMessage("");
         logIn(matchedUser.firstName);
-        onLoginSuccess(matchedUser.firstName, matchedUser.role);
-
+        onLoginSuccess(matchedUser.firstName, matchedUser.email, matchedUser.role);
+  
+        
+        localStorage.setItem("user", JSON.stringify(matchedUser));
+  
         if (matchedUser.role === "CUSTOMER") {
           navigate("/home");
         } else if (matchedUser.role === "ADMIN") {

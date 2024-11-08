@@ -36,9 +36,9 @@ const Home = () => {
     <div className="home-container">
       <div className="home-image-container">
         <img
-//        src="https://cdn.pixabay.com/photo/2024/04/23/09/33/ai-generated-8714546_960_720.jpg"
-//          alt="India"
-//          className="home-image"
+          src="https://cdn.pixabay.com/photo/2024/04/23/09/33/ai-generated-8714546_960_720.jpg"
+          alt="India"
+          className="home-image"
         />
         <div className="home-overlay">
           <h1 className="home-title">KLN Hotels</h1>
@@ -48,8 +48,25 @@ const Home = () => {
 
       <h2 className="top-items-text">Categories</h2>
 
-      <div className="categories-slider">
-        <Slider {...settings}>
+      {categories.length > 6 ? (
+        <div className="categories-slider">
+          <Slider {...settings}>
+            {categories.map(category => (
+              <Link
+                key={category.category_id}
+                to={`/cart?category=${category.name}`}
+                className="category-link"
+              >
+                <div className="category-item">
+                  <img src={category.imageUrl} alt={category.name} className="category-image" />
+                  <h2 className="category-name">{category.name}</h2>
+                </div>
+              </Link>
+            ))}
+          </Slider>
+        </div>
+      ) : (
+        <div className="categories-list">
           {categories.map(category => (
             <Link
               key={category.category_id}
@@ -62,8 +79,8 @@ const Home = () => {
               </div>
             </Link>
           ))}
-        </Slider>
-      </div>
+        </div>
+      )}
     </div>
   );
 };
