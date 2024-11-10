@@ -1,0 +1,76 @@
+
+.orders-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.orders-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.orders-table th, .orders-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.orders-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.orders-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.orders-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+.orders-error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff4d4d;
+}
+
+.orders-loading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.orders-no-items {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.orders-table td[colSpan="8"] {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+@media (max-width: 768px) {
+    .orders-table {
+        font-size: 14px;
+    }
+
+    .orders-table th, .orders-table td {
+        padding: 8px;
+    }
+}
