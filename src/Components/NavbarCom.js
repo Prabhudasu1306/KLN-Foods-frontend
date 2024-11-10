@@ -20,6 +20,7 @@ import Dashboard from './Dashboard';
 import Profile from './Profile';
 
 import Categories from './Categories';
+import Orders from './Orders';
 
 const NavbarCom = () => {
   const { getCartItemCount } = useCart();
@@ -38,7 +39,7 @@ const NavbarCom = () => {
 
   const handleLoginSuccess = (firstName, email, role) => {
     setUserName(firstName);
-    setUserEmail(email); // Store the email
+    setUserEmail(email); 
     setUserRole(role);
   };
 
@@ -85,6 +86,7 @@ const NavbarCom = () => {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item as={Link} to={`/profile`}>Profile</Dropdown.Item> 
+                    <Dropdown.Item as={Link} to={`/Orders`}>Orders</Dropdown.Item> 
                     <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -107,6 +109,7 @@ const NavbarCom = () => {
               <Route path="/payment" element={<Payment />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/orders" element={<Orders />} />
             </>
           )}
           

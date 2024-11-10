@@ -1,156 +1,262 @@
 
-
 .cart-details-container {
-  display: flex; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+  font-family: 'Arial', sans-serif;
 }
+
+.personal-details-section {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.personal-details-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.personal-detail-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  flex: 1 1 200px;
+  box-sizing: border-box;
+}
+
+
+.cart-items-address-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 30px;
+}
+
 
 .left-section {
-  width: 25%; 
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  margin-right: 20px; 
+  flex: 1;
 }
 
-.right-section {
-  width: 75%; 
-  border: 1px solid #ccc;
+.cart-item-list {
+  padding: 20px;
+  background-color: #fff;
   border-radius: 8px;
-  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  max-height: 400px;
 }
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #f4f4f4;
+}
+
+.cart-table td {
+  background-color: #fafafa;
+}
+
 
 .cart-summary {
+  padding-top: 20px;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 10px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.cart-quantity-controls {
-  display: flex;
-  align-items: center;
-}
-
-.cart-quantity-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.cart-quantity-display {
-  margin: 0 10px;
-}
-
-.address-list {
-  margin-top: 10px;
-}
-
-.address-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  background-color: #f9f9f9;
   padding: 10px;
-  border-radius: 4px;
-}
-
-.address-buttons {
-  display: flex;
-}
-
-.address-select-button {
-  background-color: #008cba; 
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.address-edit-button {
-  background-color: #e7e7e7;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.address-delete-button {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.new-address-form {
+  border-radius: 8px;
   margin-top: 20px;
 }
 
-.new-address-input-group {
+
+.cart-quantity-controls {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-quantity-button {
+  padding: 6px 12px;
+  font-size: 18px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.cart-quantity-display {
+  font-size: 16px;
+}
+
+
+.right-section {
+  flex: 1;
+}
+
+.address-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.address-table th,
+.address-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.address-table th {
+  background-color: #f4f4f4;
+}
+
+.address-table td {
+  background-color: #fafafa;
+}
+
+
+.address-summary {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.address-form-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.address-field-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
   margin-bottom: 10px;
 }
 
-.new-address-input {
-  width: 48%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.address-buttons button {
+  margin-left: 10px;
+}
+
+.address-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.add-address-button,
+.address-form-button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.add-address-button:hover,
+.address-form-button:hover {
+  background-color: #218838;
+}
+
+
+.process-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.process-button:hover {
+  background-color: #0056b3;
+}
+
+.address-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.address-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.address-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .save-address-button {
   background-color: #4CAF50; 
   color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
 }
 
-.clear-new-address-button {
-  background-color: #f44336; 
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+.save-address-button:hover {
+  background-color: #45a049;
 }
 
-.add-address-button {
+.add-new-address-button {
   background-color: #008CBA; 
   color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.process-to-pay-button {
-  background-color: #4CAF50;
+.add-new-address-button:hover {
+  background-color: #007bb5;
+}
+
+
+button {
+  background-color: #f44336; 
   color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
   border: none;
-  padding: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
-.address-list {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 10px; 
-}
 
-.address-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+button:hover {
+  background-color: #e53935;
 }
